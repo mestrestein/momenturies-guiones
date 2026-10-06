@@ -7,7 +7,16 @@
     "Texto en pantalla siempre: la mayoría lo ve sin sonido.",
     "Para probar ganchos: duplicar el proyecto en HeyGen y cambiar solo la primera frase."
   ],
-  "estados": ["Idea", "Aprobado", "Grabando planos", "En HeyGen", "Montado", "En test", "Ganador", "Descartado"],
+  "estados": [
+    "Idea",
+    "Aprobado",
+    "Grabando planos",
+    "En HeyGen",
+    "Montado",
+    "En test",
+    "Ganador",
+    "Descartado"
+  ],
   "guiones": [
     {
       "id": "G01",
@@ -16,15 +25,41 @@
       "publico": "General, 25-45",
       "producto": "Cuadro",
       "estado": "Idea",
-      "gancho_alternativo": ["¿Cuándo fue la última vez que miraste las fotos de tu boda?", "Tu galería tiene 10.000 fotos. Tu salón, cero."],
-      "bloques": [
-        {"t": "0-3 s", "voz": "Tienes más de diez mil fotos en el móvil y ninguna en la pared.", "plano": "Dedo bajando rápido por la galería del móvil. Corte a pared vacía del salón."},
-        {"t": "3-10 s", "voz": "Las del viaje, las de la boda, las de los niños de pequeños. Ahí, perdidas.", "plano": "Tres fotos familiares pasando en pantalla del móvil."},
-        {"t": "10-18 s", "voz": "Momenturies las imprime en aluminio, con un brillo que el papel no tiene, y llegan listas para colgar.", "plano": "Quitar el film del Cuadro. Primer plano del brillo. Colgarlo en la pared."},
-        {"t": "18-22 s", "voz": "Elige la primera en momenturies.com.", "plano": "Plano abierto de la pared terminada con 3 cuadros. Logo + web."}
+      "gancho_alternativo": [
+        "¿Cuándo fue la última vez que miraste las fotos de tu boda?",
+        "Tu galería tiene 10.000 fotos. Tu salón, cero."
       ],
-      "texto_pantalla": ["10.000 fotos en el móvil", "0 en la pared", "Impresas en aluminio", "momenturies.com"],
-      "notas": ""
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "Tienes más de diez mil fotos en el móvil y ninguna en la pared.",
+          "plano": "Dedo bajando rápido por la galería del móvil. Corte a pared vacía del salón."
+        },
+        {
+          "t": "3-10 s",
+          "voz": "Las del viaje, las de la boda, las de los niños de pequeños. Ahí, perdidas.",
+          "plano": "Tres fotos familiares pasando en pantalla del móvil."
+        },
+        {
+          "t": "10-18 s",
+          "voz": "Momenturies las imprime en aluminio, con un brillo que el papel no tiene, y llegan listas para colgar.",
+          "plano": "Quitar el film del Cuadro. Primer plano del brillo. Colgarlo en la pared."
+        },
+        {
+          "t": "18-22 s",
+          "voz": "Elige la primera en momenturies.com.",
+          "plano": "Plano abierto de la pared terminada con 3 cuadros. Logo + web."
+        }
+      ],
+      "texto_pantalla": [
+        "10.000 fotos en el móvil",
+        "0 en la pared",
+        "Impresas en aluminio",
+        "momenturies.com"
+      ],
+      "notas": "",
+      "prioridad": "Alta",
+      "video": "V1"
     },
     {
       "id": "G02",
@@ -33,15 +68,41 @@
       "publico": "Gente de alquiler, 22-38",
       "producto": "Cuadro",
       "estado": "Idea",
-      "gancho_alternativo": ["Si vives de alquiler, esto te interesa.", "Cuelga un cuadro sin taladro en diez segundos."],
-      "bloques": [
-        {"t": "0-3 s", "voz": "Si vives de alquiler y no puedes hacer agujeros, mira esto.", "plano": "Mano con un taladro que se aparta. Pared blanca."},
-        {"t": "3-12 s", "voz": "Los cuadros de Momenturies se cuelgan con un imán que va pegado a la pared. Ni taladro ni clavos.", "plano": "Pegar el imán premium en la pared. Acercar el Cuadro: se queda pegado solo."},
-        {"t": "12-18 s", "voz": "Y si mañana te apetece cambiarlo de sitio, lo quitas y lo pones en otro.", "plano": "Despegar el cuadro del imán y moverlo al de al lado."},
-        {"t": "18-23 s", "voz": "Tus fotos en la pared en dos minutos. momenturies.com.", "plano": "Pared terminada. Logo + web."}
+      "gancho_alternativo": [
+        "Si vives de alquiler, esto te interesa.",
+        "Cuelga un cuadro sin taladro en diez segundos."
       ],
-      "texto_pantalla": ["Sin taladro", "Sin clavos", "Se cambia de sitio cuando quieras", "momenturies.com"],
-      "notas": "Comprobar con el imán real que se despega sin marcar la pared antes de decirlo así."
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "Si vives de alquiler y no puedes hacer agujeros, mira esto.",
+          "plano": "Mano con un taladro que se aparta. Pared blanca."
+        },
+        {
+          "t": "3-12 s",
+          "voz": "Los cuadros de Momenturies se cuelgan con un imán que va pegado a la pared. Ni taladro ni clavos.",
+          "plano": "Pegar el imán premium en la pared. Acercar el Cuadro: se queda pegado solo."
+        },
+        {
+          "t": "12-18 s",
+          "voz": "Y si mañana te apetece cambiarlo de sitio, lo quitas y lo pones en otro.",
+          "plano": "Despegar el cuadro del imán y moverlo al de al lado."
+        },
+        {
+          "t": "18-23 s",
+          "voz": "Tus fotos en la pared en dos minutos. momenturies.com.",
+          "plano": "Pared terminada. Logo + web."
+        }
+      ],
+      "texto_pantalla": [
+        "Sin taladro",
+        "Sin clavos",
+        "Se cambia de sitio cuando quieras",
+        "momenturies.com"
+      ],
+      "notas": "Comprobar con el imán real que se despega sin marcar la pared antes de decirlo así.",
+      "prioridad": "Alta",
+      "video": "V1"
     },
     {
       "id": "G03",
@@ -50,15 +111,41 @@
       "publico": "Hijos e hijas 25-45 (Día de la Madre, cumpleaños, Navidad)",
       "producto": "Cuadro / Sobremesa",
       "estado": "Idea",
-      "gancho_alternativo": ["El regalo que tu madre no va a guardar en un cajón.", "Tu madre ya tiene de todo. Esto no."],
-      "bloques": [
-        {"t": "0-3 s", "voz": "¿No sabes qué regalarle a tu madre? Dale la foto que más le gusta.", "plano": "Manos envolviendo una caja. Foto madre e hija en el móvil."},
-        {"t": "3-12 s", "voz": "Momenturies la imprime en aluminio y por detrás le puedes escribir una dedicatoria tuya.", "plano": "Girar el cuadro y enseñar la dedicatoria del dorso."},
-        {"t": "12-19 s", "voz": "Lo diseñas en cinco minutos desde el móvil y le llega a casa listo para colgar o para poner en la mesa.", "plano": "Pantalla del editor eligiendo foto. Sobremesa en una estantería."},
-        {"t": "19-23 s", "voz": "Hazlo en momenturies.com.", "plano": "Reacción al abrir el regalo. Logo + web."}
+      "gancho_alternativo": [
+        "El regalo que tu madre no va a guardar en un cajón.",
+        "Tu madre ya tiene de todo. Esto no."
       ],
-      "texto_pantalla": ["Su foto favorita", "En aluminio", "Con tu dedicatoria detrás", "momenturies.com"],
-      "notas": "Muy bueno para noviembre-diciembre. Versión «para papá» cambiando solo el gancho."
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "¿No sabes qué regalarle a tu madre? Dale la foto que más le gusta.",
+          "plano": "Manos envolviendo una caja. Foto madre e hija en el móvil."
+        },
+        {
+          "t": "3-12 s",
+          "voz": "Momenturies la imprime en aluminio y por detrás le puedes escribir una dedicatoria tuya.",
+          "plano": "Girar el cuadro y enseñar la dedicatoria del dorso."
+        },
+        {
+          "t": "12-19 s",
+          "voz": "Lo diseñas en cinco minutos desde el móvil y le llega a casa listo para colgar o para poner en la mesa.",
+          "plano": "Pantalla del editor eligiendo foto. Sobremesa en una estantería."
+        },
+        {
+          "t": "19-23 s",
+          "voz": "Hazlo en momenturies.com.",
+          "plano": "Reacción al abrir el regalo. Logo + web."
+        }
+      ],
+      "texto_pantalla": [
+        "Su foto favorita",
+        "En aluminio",
+        "Con tu dedicatoria detrás",
+        "momenturies.com"
+      ],
+      "notas": "Muy bueno para noviembre-diciembre. Versión «para papá» cambiando solo el gancho.",
+      "prioridad": "Alta",
+      "video": "V1"
     },
     {
       "id": "G04",
@@ -67,15 +154,40 @@
       "publico": "Parejas 25-40",
       "producto": "Cuadro",
       "estado": "Idea",
-      "gancho_alternativo": ["Lleváis años juntos y no tenéis ni una foto en la pared.", "La fecha que solo vosotros sabéis, escrita detrás."],
-      "bloques": [
-        {"t": "0-3 s", "voz": "Si lleváis años juntos y no tenéis ni una foto vuestra en la pared, algo falla.", "plano": "Pareja en el sofá, pared vacía detrás."},
-        {"t": "3-12 s", "voz": "Elegid la del primer viaje o la de la boda. Momenturies la imprime en aluminio.", "plano": "Scroll por fotos de pareja. Quitar el film del cuadro."},
-        {"t": "12-19 s", "voz": "Y por detrás podéis escribir la fecha que solo vosotros sabéis.", "plano": "Primer plano del dorso con una fecha escrita."},
-        {"t": "19-23 s", "voz": "Para el aniversario, momenturies.com.", "plano": "Colgar el cuadro entre los dos. Logo + web."}
+      "gancho_alternativo": [
+        "Lleváis años juntos y no tenéis ni una foto en la pared.",
+        "La fecha que solo vosotros sabéis, escrita detrás."
       ],
-      "texto_pantalla": ["Vuestra foto", "Vuestra fecha detrás", "momenturies.com"],
-      "notas": ""
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "Si lleváis años juntos y no tenéis ni una foto vuestra en la pared, algo falla.",
+          "plano": "Pareja en el sofá, pared vacía detrás."
+        },
+        {
+          "t": "3-12 s",
+          "voz": "Elegid la del primer viaje o la de la boda. Momenturies la imprime en aluminio.",
+          "plano": "Scroll por fotos de pareja. Quitar el film del cuadro."
+        },
+        {
+          "t": "12-19 s",
+          "voz": "Y por detrás podéis escribir la fecha que solo vosotros sabéis.",
+          "plano": "Primer plano del dorso con una fecha escrita."
+        },
+        {
+          "t": "19-23 s",
+          "voz": "Para el aniversario, momenturies.com.",
+          "plano": "Colgar el cuadro entre los dos. Logo + web."
+        }
+      ],
+      "texto_pantalla": [
+        "Vuestra foto",
+        "Vuestra fecha detrás",
+        "momenturies.com"
+      ],
+      "notas": "",
+      "prioridad": "Media",
+      "video": "V1"
     },
     {
       "id": "G05",
@@ -84,15 +196,41 @@
       "publico": "Recién mudados, 25-40",
       "producto": "Cuadro (pared entera)",
       "estado": "Idea",
-      "gancho_alternativo": ["Te acabas de mudar y las paredes siguen blancas.", "Cómo llenar una pared entera en una tarde."],
-      "bloques": [
-        {"t": "0-3 s", "voz": "Casa nueva, paredes vacías. Así se llenan en una tarde.", "plano": "Cajas de mudanza. Pared vacía del salón."},
-        {"t": "3-12 s", "voz": "En Momenturies eliges una composición ya pensada para tu pared y subes tus fotos.", "plano": "Grabación de pantalla: Paredes de ensueño, elegir una, subir fotos."},
-        {"t": "12-19 s", "voz": "Ves cómo queda antes de pedirla, y te llega en aluminio, lista para colgar sin herramientas.", "plano": "Colgar 3-4 cuadros seguidos. Plano acelerado."},
-        {"t": "19-24 s", "voz": "Tu casa nueva, con vuestra vida en las paredes. momenturies.com.", "plano": "Plano abierto de la pared terminada. Logo + web."}
+      "gancho_alternativo": [
+        "Te acabas de mudar y las paredes siguen blancas.",
+        "Cómo llenar una pared entera en una tarde."
       ],
-      "texto_pantalla": ["Pared vacía", "Eliges la composición", "La ves antes de pedirla", "momenturies.com"],
-      "notas": "Usar solo composiciones que tengan stock."
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "Casa nueva, paredes vacías. Así se llenan en una tarde.",
+          "plano": "Cajas de mudanza. Pared vacía del salón."
+        },
+        {
+          "t": "3-12 s",
+          "voz": "En Momenturies eliges una composición ya pensada para tu pared y subes tus fotos.",
+          "plano": "Grabación de pantalla: Paredes de ensueño, elegir una, subir fotos."
+        },
+        {
+          "t": "12-19 s",
+          "voz": "Ves cómo queda antes de pedirla, y te llega en aluminio, lista para colgar sin herramientas.",
+          "plano": "Colgar 3-4 cuadros seguidos. Plano acelerado."
+        },
+        {
+          "t": "19-24 s",
+          "voz": "Tu casa nueva, con vuestra vida en las paredes. momenturies.com.",
+          "plano": "Plano abierto de la pared terminada. Logo + web."
+        }
+      ],
+      "texto_pantalla": [
+        "Pared vacía",
+        "Eliges la composición",
+        "La ves antes de pedirla",
+        "momenturies.com"
+      ],
+      "notas": "Usar solo composiciones que tengan stock.",
+      "prioridad": "Alta",
+      "video": "V1"
     },
     {
       "id": "G06",
@@ -101,15 +239,41 @@
       "publico": "General",
       "producto": "Cuadro",
       "estado": "Idea",
-      "gancho_alternativo": ["La misma foto, dos materiales. Mira la diferencia.", "Por qué tus fotos en papel se ven apagadas."],
-      "bloques": [
-        {"t": "0-3 s", "voz": "Esto es una foto impresa en papel. Y esta es la misma foto en aluminio.", "plano": "Las dos en la mano, una al lado de la otra, con luz de ventana."},
-        {"t": "3-12 s", "voz": "El aluminio no se dobla, no necesita marco ni cristal, y los colores tienen otro brillo.", "plano": "Doblar un poco la de papel. Inclinar la de aluminio para ver el reflejo."},
-        {"t": "12-18 s", "voz": "Se cuelga sin agujeros y se limpia con un paño.", "plano": "Colgarla en el imán. Pasar un paño."},
-        {"t": "18-22 s", "voz": "Prueba con tu foto en momenturies.com.", "plano": "Cuadro colgado. Logo + web."}
+      "gancho_alternativo": [
+        "La misma foto, dos materiales. Mira la diferencia.",
+        "Por qué tus fotos en papel se ven apagadas."
       ],
-      "texto_pantalla": ["Papel", "Aluminio", "Sin marco ni cristal", "momenturies.com"],
-      "notas": "El papel de la comparativa tiene que ser una foto de verdad, no una ya trucada."
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "Esto es una foto impresa en papel. Y esta es la misma foto en aluminio.",
+          "plano": "Las dos en la mano, una al lado de la otra, con luz de ventana."
+        },
+        {
+          "t": "3-12 s",
+          "voz": "El aluminio no se dobla, no necesita marco ni cristal, y los colores tienen otro brillo.",
+          "plano": "Doblar un poco la de papel. Inclinar la de aluminio para ver el reflejo."
+        },
+        {
+          "t": "12-18 s",
+          "voz": "Se cuelga sin agujeros y se limpia con un paño.",
+          "plano": "Colgarla en el imán. Pasar un paño."
+        },
+        {
+          "t": "18-22 s",
+          "voz": "Prueba con tu foto en momenturies.com.",
+          "plano": "Cuadro colgado. Logo + web."
+        }
+      ],
+      "texto_pantalla": [
+        "Papel",
+        "Aluminio",
+        "Sin marco ni cristal",
+        "momenturies.com"
+      ],
+      "notas": "El papel de la comparativa tiene que ser una foto de verdad, no una ya trucada.",
+      "prioridad": "Media",
+      "video": "V1"
     },
     {
       "id": "G07",
@@ -118,15 +282,40 @@
       "publico": "35-60",
       "producto": "Cuadro / Sobremesa",
       "estado": "Idea",
-      "gancho_alternativo": ["Esa foto de tus abuelos merece algo mejor que un álbum.", "Las fotos antiguas también se pueden colgar."],
-      "bloques": [
-        {"t": "0-3 s", "voz": "Esa foto de tus abuelos que está guardada en un álbum merece algo mejor.", "plano": "Abrir un álbum antiguo. Foto en blanco y negro."},
-        {"t": "3-11 s", "voz": "Hazle una foto con el móvil o escanéala, y súbela a Momenturies.", "plano": "Fotografiar la foto antigua con el móvil."},
-        {"t": "11-19 s", "voz": "La imprimen en aluminio para que esté en el salón, donde se ve, y no en una caja.", "plano": "Colgar el cuadro. Plano de la familia mirándolo."},
-        {"t": "19-23 s", "voz": "Tenlos cerca. momenturies.com.", "plano": "Primer plano del cuadro colgado. Logo + web."}
+      "gancho_alternativo": [
+        "Esa foto de tus abuelos merece algo mejor que un álbum.",
+        "Las fotos antiguas también se pueden colgar."
       ],
-      "texto_pantalla": ["Del álbum", "a tu pared", "momenturies.com"],
-      "notas": "Ojo con la resolución de fotos escaneadas: el editor avisa si se queda corta. Mejor tamaño pequeño o Sobremesa."
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "Esa foto de tus abuelos que está guardada en un álbum merece algo mejor.",
+          "plano": "Abrir un álbum antiguo. Foto en blanco y negro."
+        },
+        {
+          "t": "3-11 s",
+          "voz": "Hazle una foto con el móvil o escanéala, y súbela a Momenturies.",
+          "plano": "Fotografiar la foto antigua con el móvil."
+        },
+        {
+          "t": "11-19 s",
+          "voz": "La imprimen en aluminio para que esté en el salón, donde se ve, y no en una caja.",
+          "plano": "Colgar el cuadro. Plano de la familia mirándolo."
+        },
+        {
+          "t": "19-23 s",
+          "voz": "Tenlos cerca. momenturies.com.",
+          "plano": "Primer plano del cuadro colgado. Logo + web."
+        }
+      ],
+      "texto_pantalla": [
+        "Del álbum",
+        "a tu pared",
+        "momenturies.com"
+      ],
+      "notas": "Ojo con la resolución de fotos escaneadas: el editor avisa si se queda corta. Mejor tamaño pequeño o Sobremesa.",
+      "prioridad": "Baja",
+      "video": "V1"
     },
     {
       "id": "G08",
@@ -135,15 +324,41 @@
       "publico": "Indecisos, 28-50",
       "producto": "Cuadro",
       "estado": "Idea",
-      "gancho_alternativo": ["¿Y si quedara pequeño? ¿Y si no pega con el sofá?", "Antes de comprar un cuadro, haz esto."],
-      "bloques": [
-        {"t": "0-3 s", "voz": "¿Y si pudieras ver cómo queda el cuadro en tu salón antes de pedirlo?", "plano": "Persona dudando delante de una pared con el móvil en la mano."},
-        {"t": "3-13 s", "voz": "En Momenturies subes tu foto, eliges el tamaño y lo ves colgado en una pared.", "plano": "Grabación de pantalla del editor con el entorno y cambiando el tamaño."},
-        {"t": "13-19 s", "voz": "Lo cambias las veces que haga falta hasta que te convence.", "plano": "Cambiar de tamaño y de foto en pantalla."},
-        {"t": "19-23 s", "voz": "Y luego te llega a casa en aluminio. momenturies.com.", "plano": "Cuadro real colgado en el mismo sitio. Logo + web."}
+      "gancho_alternativo": [
+        "¿Y si quedara pequeño? ¿Y si no pega con el sofá?",
+        "Antes de comprar un cuadro, haz esto."
       ],
-      "texto_pantalla": ["Míralo antes", "Cambia el tamaño", "Te llega en aluminio", "momenturies.com"],
-      "notas": "Confirmar qué enseña exactamente la función de «ver en la pared» antes de grabar la pantalla."
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "¿Y si pudieras ver cómo queda el cuadro en tu salón antes de pedirlo?",
+          "plano": "Persona dudando delante de una pared con el móvil en la mano."
+        },
+        {
+          "t": "3-13 s",
+          "voz": "En Momenturies subes tu foto, eliges el tamaño y lo ves colgado en una pared.",
+          "plano": "Grabación de pantalla del editor con el entorno y cambiando el tamaño."
+        },
+        {
+          "t": "13-19 s",
+          "voz": "Lo cambias las veces que haga falta hasta que te convence.",
+          "plano": "Cambiar de tamaño y de foto en pantalla."
+        },
+        {
+          "t": "19-23 s",
+          "voz": "Y luego te llega a casa en aluminio. momenturies.com.",
+          "plano": "Cuadro real colgado en el mismo sitio. Logo + web."
+        }
+      ],
+      "texto_pantalla": [
+        "Míralo antes",
+        "Cambia el tamaño",
+        "Te llega en aluminio",
+        "momenturies.com"
+      ],
+      "notas": "Confirmar qué enseña exactamente la función de «ver en la pared» antes de grabar la pantalla.",
+      "prioridad": "Media",
+      "video": "V3"
     },
     {
       "id": "G09",
@@ -152,15 +367,40 @@
       "publico": "Dueños de perro o gato, 22-45",
       "producto": "Cuadro / Imán",
       "estado": "Idea",
-      "gancho_alternativo": ["La mitad de las fotos de tu móvil son de tu perro. Lo sabes.", "Tu gato ya manda en casa. Que se note en la pared."],
-      "bloques": [
-        {"t": "0-3 s", "voz": "Tu perro sale en la mitad de las fotos de tu móvil. Ya va siendo hora de que tenga su sitio en la pared.", "plano": "Galería llena de fotos del perro. El perro mirando a cámara."},
-        {"t": "3-12 s", "voz": "Elige su mejor foto y Momenturies la imprime en aluminio.", "plano": "Quitar el film: aparece el perro. Colgarlo."},
-        {"t": "12-19 s", "voz": "Y si la quieres más pequeña, también en Imán para la nevera o en Sobremesa para la mesa.", "plano": "Imán en la nevera. Sobremesa en el escritorio."},
-        {"t": "19-23 s", "voz": "momenturies.com.", "plano": "El perro delante de su cuadro. Logo + web."}
+      "gancho_alternativo": [
+        "La mitad de las fotos de tu móvil son de tu perro. Lo sabes.",
+        "Tu gato ya manda en casa. Que se note en la pared."
       ],
-      "texto_pantalla": ["Su mejor foto", "En la pared, la nevera o la mesa", "momenturies.com"],
-      "notas": "Si hay un perro real en el rodaje, el último plano es oro."
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "Tu perro sale en la mitad de las fotos de tu móvil. Ya va siendo hora de que tenga su sitio en la pared.",
+          "plano": "Galería llena de fotos del perro. El perro mirando a cámara."
+        },
+        {
+          "t": "3-12 s",
+          "voz": "Elige su mejor foto y Momenturies la imprime en aluminio.",
+          "plano": "Quitar el film: aparece el perro. Colgarlo."
+        },
+        {
+          "t": "12-19 s",
+          "voz": "Y si la quieres más pequeña, también en Imán para la nevera o en Sobremesa para la mesa.",
+          "plano": "Imán en la nevera. Sobremesa en el escritorio."
+        },
+        {
+          "t": "19-23 s",
+          "voz": "momenturies.com.",
+          "plano": "El perro delante de su cuadro. Logo + web."
+        }
+      ],
+      "texto_pantalla": [
+        "Su mejor foto",
+        "En la pared, la nevera o la mesa",
+        "momenturies.com"
+      ],
+      "notas": "Si hay un perro real en el rodaje, el último plano es oro.",
+      "prioridad": "Baja",
+      "video": "V1"
     },
     {
       "id": "G10",
@@ -169,16 +409,389 @@
       "publico": "General",
       "producto": "Cuadro + Sobremesa + Imán",
       "estado": "Idea",
-      "gancho_alternativo": ["Tres sitios donde tus fotos se ven todos los días.", "No todas las fotos son para la pared."],
-      "bloques": [
-        {"t": "0-3 s", "voz": "Hay fotos para la pared, fotos para la mesa y fotos para la nevera.", "plano": "Tres cortes rápidos: pared, mesa, nevera."},
-        {"t": "3-10 s", "voz": "El Cuadro se cuelga en la pared sin hacer agujeros.", "plano": "Colgar el Cuadro en el imán."},
-        {"t": "10-15 s", "voz": "El Sobremesa va con su peana de bambú para la estantería o el escritorio.", "plano": "Meter la foto en la peana y dejarla en la balda."},
-        {"t": "15-19 s", "voz": "Y el Imán, para la nevera.", "plano": "Pegar el Imán en la nevera."},
-        {"t": "19-23 s", "voz": "Todos en aluminio, con tu foto. momenturies.com.", "plano": "Los tres juntos en un plano. Logo + web."}
+      "gancho_alternativo": [
+        "Tres sitios donde tus fotos se ven todos los días.",
+        "No todas las fotos son para la pared."
       ],
-      "texto_pantalla": ["Cuadro", "Sobremesa", "Imán", "momenturies.com"],
-      "notas": ""
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "Hay fotos para la pared, fotos para la mesa y fotos para la nevera.",
+          "plano": "Tres cortes rápidos: pared, mesa, nevera."
+        },
+        {
+          "t": "3-10 s",
+          "voz": "El Cuadro se cuelga en la pared sin hacer agujeros.",
+          "plano": "Colgar el Cuadro en el imán."
+        },
+        {
+          "t": "10-15 s",
+          "voz": "El Sobremesa va con su peana de bambú para la estantería o el escritorio.",
+          "plano": "Meter la foto en la peana y dejarla en la balda."
+        },
+        {
+          "t": "15-19 s",
+          "voz": "Y el Imán, para la nevera.",
+          "plano": "Pegar el Imán en la nevera."
+        },
+        {
+          "t": "19-23 s",
+          "voz": "Todos en aluminio, con tu foto. momenturies.com.",
+          "plano": "Los tres juntos en un plano. Logo + web."
+        }
+      ],
+      "texto_pantalla": [
+        "Cuadro",
+        "Sobremesa",
+        "Imán",
+        "momenturies.com"
+      ],
+      "notas": "",
+      "prioridad": "Media",
+      "video": "V1"
+    },
+    {
+      "id": "G11",
+      "titulo": "Así llega tu foto",
+      "angulo": "Reveal del producto",
+      "publico": "General",
+      "producto": "Cuadro",
+      "estado": "Idea",
+      "prioridad": "Alta",
+      "video": "V2",
+      "gancho_alternativo": [
+        "Espera a ver cómo brilla",
+        "No es papel. Mira."
+      ],
+      "bloques": [
+        {
+          "t": "0-2 s",
+          "voz": "(sin voz) Texto: «Una foto del móvil. Mira en qué se convierte.»",
+          "plano": "Caja cerrada sobre la mesa, manos entrando en plano."
+        },
+        {
+          "t": "2-8 s",
+          "voz": "(sin voz) Texto: «Impresa en aluminio»",
+          "plano": "Sacar el Cuadro y empezar a quitar el film despacio."
+        },
+        {
+          "t": "8-12 s",
+          "voz": "(sin voz) Texto: «Sin marco. Sin cristal.»",
+          "plano": "Film fuera. Inclinar el cuadro hacia la ventana para que brille."
+        },
+        {
+          "t": "12-16 s",
+          "voz": "(sin voz) Texto: «Se cuelga sin agujeros»",
+          "plano": "Colgarlo en el imán de la pared."
+        },
+        {
+          "t": "16-18 s",
+          "voz": "(sin voz) Texto: «CREA EL TUYO EN MOMENTURIES.COM»",
+          "plano": "Plano abierto del cuadro colgado."
+        }
+      ],
+      "texto_pantalla": [
+        "Una foto del móvil. Mira en qué se convierte.",
+        "Impresa en aluminio",
+        "Sin marco. Sin cristal.",
+        "Se cuelga sin agujeros",
+        "CREA EL TUYO EN MOMENTURIES.COM"
+      ],
+      "notas": "Mismo formato que los reveal de Futsides: ganchos en blanco con sombra suave y CTA en mayúsculas. Música de Mixkit con el golpe justo al quitar el film."
+    },
+    {
+      "id": "G12",
+      "titulo": "De pared vacía a pared llena",
+      "angulo": "Transformación",
+      "publico": "Recién mudados, decoración",
+      "producto": "Cuadro (pared entera)",
+      "estado": "Idea",
+      "prioridad": "Alta",
+      "video": "V4",
+      "gancho_alternativo": [
+        "Esta pared llevaba dos años vacía",
+        "Antes y después en 15 segundos"
+      ],
+      "bloques": [
+        {
+          "t": "0-2 s",
+          "voz": "(sin voz) Texto: «Esta pared llevaba dos años vacía»",
+          "plano": "Pared vacía, plano fijo con trípode. No mover el trípode en todo el vídeo."
+        },
+        {
+          "t": "2-12 s",
+          "voz": "(sin voz) Texto: «Sin taladro. Sin clavos.»",
+          "plano": "Timelapse: la persona pega los imanes y cuelga 4-6 cuadros uno tras otro."
+        },
+        {
+          "t": "12-16 s",
+          "voz": "(sin voz) Texto: «Con vuestras fotos»",
+          "plano": "Resultado final. Zoom lento hacia los cuadros."
+        },
+        {
+          "t": "16-18 s",
+          "voz": "(sin voz) Texto: «DISEÑA TU PARED EN MOMENTURIES.COM»",
+          "plano": "Plano final fijo."
+        }
+      ],
+      "texto_pantalla": [
+        "Esta pared llevaba dos años vacía",
+        "Sin taladro. Sin clavos.",
+        "Con vuestras fotos",
+        "DISEÑA TU PARED EN MOMENTURIES.COM"
+      ],
+      "notas": "Usar una composición de Paredes de ensueño que tenga stock, la misma que se enseña en la web."
+    },
+    {
+      "id": "G13",
+      "titulo": "Abriendo el regalo",
+      "angulo": "Reacción real",
+      "publico": "Compradores de regalo (Navidad)",
+      "producto": "Cuadro / Sobremesa",
+      "estado": "Idea",
+      "prioridad": "Media",
+      "video": "V5",
+      "gancho_alternativo": [
+        "Su cara al ver la foto",
+        "Le regalamos la foto de su boda"
+      ],
+      "bloques": [
+        {
+          "t": "0-3 s",
+          "voz": "(sin voz) Texto: «Le regalamos la foto de su boda»",
+          "plano": "Persona real recibiendo el paquete, sin saber qué es."
+        },
+        {
+          "t": "3-12 s",
+          "voz": "(audio real de la reacción)",
+          "plano": "Abre, quita el film y reacciona. Dejar el sonido real."
+        },
+        {
+          "t": "12-16 s",
+          "voz": "(sin voz) Texto: «Y por detrás, una dedicatoria»",
+          "plano": "Gira el cuadro y lee el dorso."
+        },
+        {
+          "t": "16-19 s",
+          "voz": "(sin voz) Texto: «EL REGALO DE ESTA NAVIDAD · MOMENTURIES.COM»",
+          "plano": "La persona con el cuadro en las manos."
+        }
+      ],
+      "texto_pantalla": [
+        "Le regalamos la foto de su boda",
+        "Y por detrás, una dedicatoria",
+        "EL REGALO DE ESTA NAVIDAD · MOMENTURIES.COM"
+      ],
+      "notas": "Tiene que ser una reacción real de alguien conocido que dé permiso por escrito para usar su imagen en anuncios. Nada de actores haciéndose pasar por clientes."
     }
-  ]
+  ],
+  "videos": [
+    {
+      "id": "V1",
+      "nombre": "Presentador + demostración",
+      "resumen": "Un avatar de HeyGen explica en tercera persona mientras debajo se ven los planos reales de alguien colgando sus fotos. Es el formato principal.",
+      "guiones": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G09",
+        "G10"
+      ],
+      "pasos": [
+        "Grabar los planos reales el día de rodaje (pestaña Rodaje).",
+        "En HeyGen, elegir avatar y voz de España. Para empezar vale uno de stock; más adelante, el gemelo digital de alguien del equipo.",
+        "Pegar el texto con el botón «Copiar texto para HeyGen». Un punto entre frases para que respire.",
+        "Generar en 9:16 con fondo verde liso o sin fondo.",
+        "Montaje: avatar en la mitad de arriba, planos reales debajo, subtítulos y música.",
+        "Sacar la versión base y 3-5 variantes cambiando solo el gancho."
+      ],
+      "ias": [
+        {
+          "h": "HeyGen",
+          "para": "Avatar que habla y voz"
+        },
+        {
+          "h": "ElevenLabs (opcional)",
+          "para": "Si la voz de HeyGen no suena natural en castellano, generarla aquí y subirla a HeyGen"
+        },
+        {
+          "h": "Remotion (ya montado) o CapCut",
+          "para": "Montaje, subtítulos y variantes"
+        },
+        {
+          "h": "Mixkit",
+          "para": "Música con licencia para anuncios"
+        }
+      ]
+    },
+    {
+      "id": "V2",
+      "nombre": "Reveal sin voz",
+      "resumen": "Quitar el film y que aparezca la foto brillando, con texto en pantalla y música. El más barato y rápido de producir, el mismo formato que ya funciona en Futsides.",
+      "guiones": [
+        "G11"
+      ],
+      "pasos": [
+        "Grabar 3-4 tomas del reveal con fotos distintas (familia, pareja, perro, viaje).",
+        "Quedarse con la toma donde mejor brille el aluminio.",
+        "Poner textos y música con el golpe al quitar el film.",
+        "Una versión por foto: cada una apunta a un público distinto."
+      ],
+      "ias": [
+        {
+          "h": "Ninguna para grabar",
+          "para": "Es grabación real"
+        },
+        {
+          "h": "Remotion o el script de rótulos de Futsides",
+          "para": "Textos con fundido, mismo estilo"
+        },
+        {
+          "h": "Mixkit",
+          "para": "Música"
+        }
+      ]
+    },
+    {
+      "id": "V3",
+      "nombre": "Demo del editor",
+      "resumen": "Grabación de pantalla subiendo una foto, eligiendo tamaño y viéndola en la pared; al final, el cuadro real colgado. Quita el miedo a equivocarse.",
+      "guiones": [
+        "G08"
+      ],
+      "pasos": [
+        "Grabar la pantalla con el script que ya existe (node _grabar_demos.js) o con el propio móvil.",
+        "Grabar el mismo cuadro real colgado en una pared parecida.",
+        "Avatar de HeyGen en una esquina explicando, o solo texto.",
+        "Montar: pantalla durante el 70 % del vídeo y el cuadro real al final."
+      ],
+      "ias": [
+        {
+          "h": "HeyGen (opcional)",
+          "para": "Presentador en una esquina"
+        },
+        {
+          "h": "Remotion",
+          "para": "Marco de móvil y zooms sobre la pantalla"
+        }
+      ]
+    },
+    {
+      "id": "V4",
+      "nombre": "Pared vacía a pared llena",
+      "resumen": "Timelapse con trípode fijo: pared vacía, se cuelgan 4-6 cuadros y queda la pared terminada. Muy visual para decoración y mudanzas.",
+      "guiones": [
+        "G12",
+        "G05"
+      ],
+      "pasos": [
+        "Trípode fijo frente a la pared, sin moverlo nunca.",
+        "Grabar el proceso completo de colgar 4-6 cuadros.",
+        "Acelerarlo en el montaje a 15-18 segundos.",
+        "Texto y música. Versión con voz: G05 con el avatar."
+      ],
+      "ias": [
+        {
+          "h": "Ninguna para grabar",
+          "para": "Es grabación real"
+        },
+        {
+          "h": "Kling o Veo (solo de relleno)",
+          "para": "Algún plano de ambiente del salón si falta. Nunca el cuadro en primer plano: deforman la foto"
+        }
+      ]
+    },
+    {
+      "id": "V5",
+      "nombre": "Regalo y reacción",
+      "resumen": "Alguien real recibe el cuadro con su foto y reacciona. Es el formato que más emociona, pero depende de tener a la persona.",
+      "guiones": [
+        "G13",
+        "G03",
+        "G04"
+      ],
+      "pasos": [
+        "Elegir 2-3 conocidos y pedirle su foto a otro familiar, sin que lo sepan.",
+        "Pedirles permiso por escrito para usar su imagen en anuncios.",
+        "Grabar la entrega con dos móviles: uno en plano abierto y otro en la cara.",
+        "Montar con el audio real de la reacción y textos."
+      ],
+      "ias": [
+        {
+          "h": "Ninguna",
+          "para": "Tiene que ser real. Un avatar aquí sería un testimonio falso"
+        }
+      ]
+    }
+  ],
+  "plan": [
+    {
+      "paso": "0 · Antes de gastar en anuncios",
+      "que": "Comprobar que la tienda vende de verdad (checkout real, no el carrito de prueba), que el píxel de Meta está puesto y que cada anuncio lleva a la página del producto que enseña. En Futsides el problema de agosto fue el destino del anuncio, no el vídeo."
+    },
+    {
+      "paso": "1 · Semana 1: aprender HeyGen",
+      "que": "Cuenta de prueba. Hacer G02 con un avatar de stock, solo para ver el flujo completo y cómo suena la voz en castellano."
+    },
+    {
+      "paso": "2 · Semana 1: imprimir y rodar",
+      "que": "Imprimir lo de la lista de Rodaje y grabarlo todo en una tarde. De ahí salen V1, V2 y V4."
+    },
+    {
+      "paso": "3 · Semana 2: montar los de prioridad alta",
+      "que": "G11 (reveal), G12 (pared), G02, G03 y G01, cada uno con 3 ganchos. Salen 15 vídeos."
+    },
+    {
+      "paso": "4 · Semanas 2-3: test en Meta",
+      "que": "Una campaña con un conjunto por formato, 10-15 € al día por conjunto, en Stories y Feed de Instagram. A los 3-4 días mirar qué porcentaje pasa de los 3 segundos y el CTR del enlace, y quitar los que peor van."
+    },
+    {
+      "paso": "5 · Después: avatar propio y Navidad",
+      "que": "Con lo que funcione, grabar en HeyGen el gemelo digital de alguien del equipo y rodar V5 para la campaña de Navidad, que conviene lanzar a mediados de noviembre."
+    }
+  ],
+  "rodaje": {
+    "imprimir": [
+      "2 Cuadros grandes con foto de familia y de pareja",
+      "4-6 Cuadros para una composición de Paredes de ensueño (con stock)",
+      "1 Cuadro con foto de perro o gato",
+      "1 Sobremesa con su peana",
+      "2 Imanes de nevera",
+      "Imanes premium y tiras adhesivas sueltos para enseñar el colgado",
+      "Las cajas de envío reales, con el film puesto en todos los cuadros"
+    ],
+    "equipo": [
+      "Móvil grabando en vertical, 4K a 30 fps",
+      "Trípode (imprescindible para V4)",
+      "Luz de ventana de lado; nada de flash ni luz de techo",
+      "Un paño para la toma de limpieza",
+      "La misma foto impresa en papel para la comparativa (G06)"
+    ],
+    "planos": [
+      "Caja cerrada, abrir y quitar el film despacio (3 tomas)",
+      "Inclinar el cuadro hacia la ventana para que brille",
+      "Pegar el imán premium en la pared",
+      "Acercar el cuadro y que se quede pegado",
+      "Despegarlo y moverlo a otro sitio",
+      "Pared vacía con trípode fijo y timelapse colgando la composición entera",
+      "Plano abierto de la pared terminada",
+      "Girar el cuadro y enseñar la dedicatoria del dorso",
+      "Sobremesa: meter la foto en la peana y dejarla en la estantería",
+      "Imán en la nevera",
+      "Dedo bajando por la galería del móvil",
+      "Pantalla del editor subiendo una foto",
+      "Papel contra aluminio, uno al lado del otro",
+      "Alguien mirando la pared terminada (de espaldas vale)"
+    ],
+    "consejos": [
+      "Grabar cada plano 2-3 veces y más largo de lo que parece necesario.",
+      "Manos limpias y uñas cuidadas: salen mucho.",
+      "Salón ordenado, sin tele encendida ni cables a la vista.",
+      "Que las fotos impresas sean de gente que haya dado permiso."
+    ]
+  }
 }

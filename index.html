@@ -4,62 +4,80 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Guiones Momenturies</title>
+<title>Vídeos Momenturies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f6f2ec; --card:#fffdf9; --ink:#1f1b16; --muted:#6f665b; --line:#e4dccf;
-  --accent:#9a6b2f; --accent-soft:#f1e6d4; --voz:#1f1b16; --plano:#55606b;
-  --ok:#2f7a4a; --warn:#a4661a; --bad:#9b3b34;
+  --accent:#9a6b2f; --accent-soft:#f1e6d4; --plano:#55606b;
+  --ok:#2f7a4a; --warn:#a4661a; --bad:#9b3b34; --on-accent:#fff;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#151310; --card:#1e1b17; --ink:#f1ebe2; --muted:#a59b8e; --line:#332e27;
-    --accent:#d6a35c; --accent-soft:#2e261b; --voz:#f1ebe2; --plano:#a9b4bf;
-    --ok:#6cc08a; --warn:#e0a34e; --bad:#e07a70;
+    --accent:#d6a35c; --accent-soft:#2e261b; --plano:#a9b4bf;
+    --ok:#6cc08a; --warn:#e0a34e; --bad:#e07a70; --on-accent:#1a140c;
   }
 }
 :root[data-theme="dark"]{
   --bg:#151310; --card:#1e1b17; --ink:#f1ebe2; --muted:#a59b8e; --line:#332e27;
-  --accent:#d6a35c; --accent-soft:#2e261b; --voz:#f1ebe2; --plano:#a9b4bf;
-  --ok:#6cc08a; --warn:#e0a34e; --bad:#e07a70;
+  --accent:#d6a35c; --accent-soft:#2e261b; --plano:#a9b4bf;
+  --ok:#6cc08a; --warn:#e0a34e; --bad:#e07a70; --on-accent:#1a140c;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,sans-serif}
 .wrap{max-width:1040px;margin:0 auto;padding:28px 16px 64px}
 header h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5vw,40px);margin:0 0 4px;letter-spacing:-.01em}
 header p{margin:0;color:var(--muted)}
-details.reglas{margin:22px 0 18px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+nav.tabs{display:flex;gap:4px;margin:22px 0 18px;border-bottom:1px solid var(--line);overflow-x:auto}
+nav.tabs button{font:inherit;font-weight:500;background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:10px 12px;cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.panel[hidden]{display:none}
+details.reglas{margin:0 0 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
 details.reglas summary{cursor:pointer;font-weight:600}
 details.reglas ul{margin:10px 0 2px;padding-left:20px}
 details.reglas li{margin:4px 0}
-.filtros{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
-.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.fila-filtros{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;align-items:center}
+.fila-filtros .lbl{font-size:12px;color:var(--muted);width:70px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 11px;font:inherit;font-size:13px;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.grid{display:grid;gap:16px}
+.grid{display:grid;gap:16px;margin-top:10px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 14px}
 .top{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
-.id{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.06em}
+.id{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.04em}
 .card h2{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:22px;margin:2px 0 6px}
 .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:12.5px;color:var(--muted)}
 .meta span{background:var(--accent-soft);border-radius:6px;padding:2px 8px}
-.estado{font-size:12px;font-weight:600;border-radius:999px;padding:4px 10px;border:1px solid currentColor;white-space:nowrap}
-.e-Ganador,.e-Montado{color:var(--ok)} .e-Descartado{color:var(--bad)} .e-en-test,.e-En-test{color:var(--warn)}
+.meta .pri-Alta{background:var(--accent);color:var(--on-accent);font-weight:600}
+.meta .pri-Baja{background:transparent;border:1px solid var(--line)}
+.estado{font-size:12px;font-weight:600;border-radius:999px;padding:4px 10px;border:1px solid currentColor;white-space:nowrap;color:var(--muted)}
+.e-Ganador,.e-Montado{color:var(--ok)} .e-Descartado{color:var(--bad)} .e-En-test{color:var(--warn)}
 table{width:100%;border-collapse:collapse;margin:14px 0 6px}
 td{vertical-align:top;padding:9px 8px;border-top:1px solid var(--line)}
 td.t{width:64px;color:var(--muted);font-size:12.5px;white-space:nowrap;padding-left:0}
-td.voz{color:var(--voz);font-weight:500}
+td.voz{font-weight:500}
 td.plano{color:var(--plano);font-size:13.5px;width:40%}
 th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:0 8px 6px;font-weight:600}
 th:first-child{padding-left:0}
-.extra{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;font-size:13.5px}
-.extra h3{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 4px;font-weight:600}
-.extra ul{margin:0;padding-left:18px}
+.extra{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;font-size:13.5px}
+.extra h3,.card h3{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 4px;font-weight:600}
+.extra ul,.extra ol{margin:0;padding-left:18px}
+.extra li{margin:3px 0}
 .notas{margin-top:10px;font-size:13.5px;color:var(--muted);border-left:3px solid var(--accent);padding-left:10px}
 .acciones{display:flex;gap:8px;margin-top:12px}
 button.copy{font:inherit;font-size:13px;font-weight:500;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;padding:6px 12px;cursor:pointer}
 button.copy:hover{background:var(--accent-soft)}
+.paso{display:grid;grid-template-columns:minmax(150px,250px) 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.paso b{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:17px}
+.vcard .vid{color:var(--accent);font-size:14px;font-family:Inter,sans-serif;font-weight:600;margin-right:8px}
+.resumen{margin:0 0 12px;color:var(--muted)}
+.ia{display:grid;grid-template-columns:minmax(110px,170px) 1fr;gap:10px;border-top:1px solid var(--line);padding:6px 0}
+.ia b{font-weight:600}
+.linkg{font:inherit;font-size:13px;border:0;background:var(--accent-soft);color:var(--ink);border-radius:6px;padding:3px 8px;margin:2px 4px 2px 0;cursor:pointer;text-align:left}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.cols .card h2{font-size:19px}
+.cols ul{margin:6px 0 0;padding-left:20px} .cols li{margin:4px 0}
 .pie{margin-top:28px;font-size:12.5px;color:var(--muted)}
 @media (max-width:680px){
   table,tbody,tr,td{display:block;width:auto!important}
@@ -67,72 +85,142 @@ button.copy:hover{background:var(--accent-soft)}
   tr{border-top:1px solid var(--line);padding:8px 0}
   td{border:0;padding:2px 0}
   td.plano::before{content:"Plano: ";font-weight:600}
-  .extra{grid-template-columns:1fr}
+  .extra,.paso,.cols,.ia{grid-template-columns:1fr}
+  .fila-filtros .lbl{width:100%}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>Guiones de vídeo · Momenturies</h1>
-    <p id="sub">Presentador en HeyGen + planos reales colgando las fotos.</p>
+    <h1>Vídeos para anuncios · Momenturies</h1>
+    <p>Qué hacer, cómo y con qué herramienta. Guiones listos para HeyGen y planos para el día de rodaje.</p>
   </header>
-  <details class="reglas" open>
-    <summary>Reglas para todos los guiones</summary>
-    <ul id="reglas"></ul>
-  </details>
-  <div class="filtros" id="filtros"></div>
-  <div class="grid" id="grid"></div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="plan" aria-selected="true">Plan</button>
+    <button role="tab" data-tab="videos" aria-selected="false">Tipos de vídeo</button>
+    <button role="tab" data-tab="guiones" aria-selected="false">Guiones</button>
+    <button role="tab" data-tab="rodaje" aria-selected="false">Rodaje</button>
+  </nav>
+  <section class="panel" id="p-plan"></section>
+  <section class="panel" id="p-videos" hidden></section>
+  <section class="panel" id="p-guiones" hidden>
+    <details class="reglas">
+      <summary>Reglas para todos los guiones</summary>
+      <ul id="reglas"></ul>
+    </details>
+    <div class="fila-filtros" id="f-video"></div>
+    <div class="fila-filtros" id="f-pri"></div>
+    <div class="fila-filtros" id="f-estado"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+  <section class="panel" id="p-rodaje" hidden></section>
   <p class="pie" id="pie"></p>
 </div>
 <script>
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let data, filtro = 'Todos';
+let data;
+const F = {video: 'Todos', pri: 'Todas', estado: 'Todos'};
+const PRIS = ['Alta', 'Media', 'Baja'];
+const vidName = id => (data.videos.find(v => v.id === id) || {}).nombre || id;
+const sinVoz = v => v.startsWith('(');
 
-function render(){
-  const lista = data.guiones.filter(g => filtro === 'Todos' || g.estado === filtro);
-  $('#grid').innerHTML = lista.map(g => `
-    <article class="card">
-      <div class="top">
-        <div>
-          <div class="id">${esc(g.id)}</div>
-          <h2>${esc(g.titulo)}</h2>
-          <div class="meta"><span>${esc(g.angulo)}</span><span>${esc(g.publico)}</span><span>${esc(g.producto)}</span></div>
-        </div>
-        <span class="estado e-${esc(g.estado).replace(/ /g,'-')}">${esc(g.estado)}</span>
-      </div>
-      <table>
-        <thead><tr><th>Tiempo</th><th>Voz del presentador</th><th>Plano</th></tr></thead>
-        <tbody>${g.bloques.map(b => `<tr><td class="t">${esc(b.t)}</td><td class="voz">${esc(b.voz)}</td><td class="plano">${esc(b.plano)}</td></tr>`).join('')}</tbody>
-      </table>
+function tab(t){
+  document.querySelectorAll('nav.tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === t));
+  document.querySelectorAll('.panel').forEach(p => p.hidden = p.id !== 'p-' + t);
+  try { localStorage.setItem('mg-tab', t); } catch (e) {}
+}
+
+function renderPlan(){
+  $('#p-plan').innerHTML = data.plan.map(p => `<div class="paso"><b>${esc(p.paso)}</b><div>${esc(p.que)}</div></div>`).join('');
+}
+
+function renderVideos(){
+  $('#p-videos').innerHTML = '<div class="grid">' + data.videos.map(v => `
+    <article class="card vcard">
+      <h2><span class="vid">${esc(v.id)}</span>${esc(v.nombre)}</h2>
+      <p class="resumen">${esc(v.resumen)}</p>
       <div class="extra">
-        <div><h3>Ganchos alternativos</h3><ul>${(g.gancho_alternativo||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
-        <div><h3>Texto en pantalla</h3><ul>${(g.texto_pantalla||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+        <div><h3>Qué hacer</h3><ol>${v.pasos.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div>
+        <div>
+          <h3>Herramientas</h3>
+          ${v.ias.map(i => `<div class="ia"><b>${esc(i.h)}</b><span>${esc(i.para)}</span></div>`).join('')}
+          <h3 style="margin-top:14px">Guiones</h3>
+          ${v.guiones.map(g => `<button class="linkg" data-goto="${esc(g)}">${esc(g)} · ${esc((data.guiones.find(x => x.id === g) || {}).titulo)}</button>`).join('')}
+        </div>
       </div>
-      ${g.notas ? `<div class="notas">${esc(g.notas)}</div>` : ''}
-      <div class="acciones"><button class="copy" data-id="${esc(g.id)}">Copiar texto para HeyGen</button></div>
-    </article>`).join('') || '<p>No hay guiones en este estado.</p>';
+    </article>`).join('') + '</div>';
+}
+
+function renderRodaje(){
+  const r = data.rodaje;
+  const box = (t, l) => `<article class="card"><h2>${t}</h2><ul>${l.map(x => `<li>${esc(x)}</li>`).join('')}</ul></article>`;
+  $('#p-rodaje').innerHTML = `<div class="cols">${box('Qué imprimir', r.imprimir)}${box('Equipo', r.equipo)}</div>
+    <div class="cols">${box('Planos a grabar', r.planos)}${box('Consejos', r.consejos)}</div>`;
+}
+
+function chips(el, label, key, opciones){
+  $(el).innerHTML = `<span class="lbl">${label}</span>` + opciones.map(([val, txt]) =>
+    `<button class="chip" aria-pressed="${F[key] === val}" data-k="${key}" data-v="${esc(val)}">${esc(txt)}</button>`).join('');
 }
 
 function renderFiltros(){
-  const usados = ['Todos', ...data.estados.filter(e => data.guiones.some(g => g.estado === e))];
-  $('#filtros').innerHTML = usados.map(e => {
-    const n = e === 'Todos' ? data.guiones.length : data.guiones.filter(g => g.estado === e).length;
-    return `<button class="chip" aria-pressed="${e===filtro}" data-e="${esc(e)}">${esc(e)} · ${n}</button>`;
-  }).join('');
+  chips('#f-video', 'Vídeo', 'video', [['Todos', 'Todos'], ...data.videos.map(v => [v.id, v.id + ' · ' + v.nombre])]);
+  chips('#f-pri', 'Prioridad', 'pri', [['Todas', 'Todas'], ...PRIS.map(p => [p, p])]);
+  chips('#f-estado', 'Estado', 'estado', [['Todos', 'Todos'], ...data.estados.filter(e => data.guiones.some(g => g.estado === e)).map(e => [e, e])]);
+}
+
+function renderGuiones(){
+  const lista = data.guiones
+    .filter(g => (F.video === 'Todos' || g.video === F.video) && (F.pri === 'Todas' || g.prioridad === F.pri) && (F.estado === 'Todos' || g.estado === F.estado))
+    .sort((a, b) => PRIS.indexOf(a.prioridad) - PRIS.indexOf(b.prioridad));
+  $('#grid').innerHTML = lista.map(g => {
+    const conVoz = g.bloques.some(b => !sinVoz(b.voz));
+    return `
+    <article class="card" id="g-${esc(g.id)}">
+      <div class="top">
+        <div>
+          <div class="id">${esc(g.id)} · ${esc(g.video)} ${esc(vidName(g.video))}</div>
+          <h2>${esc(g.titulo)}</h2>
+          <div class="meta"><span class="pri-${esc(g.prioridad)}">Prioridad ${esc(g.prioridad)}</span><span>${esc(g.angulo)}</span><span>${esc(g.publico)}</span><span>${esc(g.producto)}</span></div>
+        </div>
+        <span class="estado e-${esc(g.estado).replace(/ /g, '-')}">${esc(g.estado)}</span>
+      </div>
+      <table>
+        <thead><tr><th>Tiempo</th><th>${conVoz ? 'Voz del presentador' : 'Texto / sonido'}</th><th>Plano</th></tr></thead>
+        <tbody>${g.bloques.map(b => `<tr><td class="t">${esc(b.t)}</td><td class="voz">${esc(b.voz)}</td><td class="plano">${esc(b.plano)}</td></tr>`).join('')}</tbody>
+      </table>
+      <div class="extra">
+        <div><h3>Ganchos alternativos</h3><ul>${(g.gancho_alternativo || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
+        <div><h3>Texto en pantalla</h3><ul>${(g.texto_pantalla || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
+      </div>
+      ${g.notas ? `<div class="notas">${esc(g.notas)}</div>` : ''}
+      ${conVoz ? `<div class="acciones"><button class="copy" data-id="${esc(g.id)}">Copiar texto para HeyGen</button></div>` : ''}
+    </article>`;
+  }).join('') || '<p>No hay guiones con estos filtros.</p>';
 }
 
 document.addEventListener('click', async ev => {
-  const chip = ev.target.closest('.chip');
-  if (chip){ filtro = chip.dataset.e; renderFiltros(); render(); return; }
+  const t = ev.target.closest('nav.tabs button');
+  if (t){ tab(t.dataset.tab); return; }
+  const chip = ev.target.closest('.chip[data-k]');
+  if (chip){ F[chip.dataset.k] = chip.dataset.v; renderFiltros(); renderGuiones(); return; }
+  const go = ev.target.closest('[data-goto]');
+  if (go){
+    F.video = 'Todos'; F.pri = 'Todas'; F.estado = 'Todos';
+    renderFiltros(); renderGuiones(); tab('guiones');
+    const el = document.getElementById('g-' + go.dataset.goto);
+    if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+    return;
+  }
   const btn = ev.target.closest('.copy');
   if (btn){
     const g = data.guiones.find(x => x.id === btn.dataset.id);
-    const texto = g.bloques.map(b => b.voz).join(' ');
+    const texto = g.bloques.map(b => b.voz).filter(v => !sinVoz(v)).join(' ');
     try { await navigator.clipboard.writeText(texto); btn.textContent = 'Copiado'; }
-    catch { prompt('Copia el texto:', texto); }
-    setTimeout(() => btn.textContent = 'Copiar texto para HeyGen', 1500);
+    catch (e) { btn.textContent = 'No se pudo copiar'; }
+    setTimeout(() => { btn.textContent = 'Copiar texto para HeyGen'; }, 1500);
   }
 });
 
@@ -140,8 +228,11 @@ fetch('guiones.json?v=' + Date.now()).then(r => r.json()).then(d => {
   data = d;
   $('#reglas').innerHTML = d.reglas.map(r => `<li>${esc(r)}</li>`).join('');
   $('#pie').textContent = 'Última actualización: ' + d.actualizado;
-  renderFiltros(); render();
-}).catch(() => { $('#grid').innerHTML = '<p>No se pudo cargar guiones.json.</p>'; });
+  renderPlan(); renderVideos(); renderRodaje(); renderFiltros(); renderGuiones();
+  let t = 'plan';
+  try { t = localStorage.getItem('mg-tab') || 'plan'; } catch (e) {}
+  tab(t);
+}).catch(() => { $('#p-plan').innerHTML = '<p>No se pudo cargar guiones.json.</p>'; });
 </script>
 </body>
 </html>
