@@ -10,30 +10,35 @@
 <style>
 :root{
   --bg:#f6f2ec; --card:#fffdf9; --ink:#1f1b16; --muted:#6f665b; --line:#e4dccf;
-  --accent:#9a6b2f; --accent-soft:#f1e6d4; --plano:#55606b;
+  --accent:#9a6b2f; --accent-soft:#f1e6d4; --plano:#55606b; --field:#fff;
   --ok:#2f7a4a; --warn:#a4661a; --bad:#9b3b34; --on-accent:#fff;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#151310; --card:#1e1b17; --ink:#f1ebe2; --muted:#a59b8e; --line:#332e27;
-    --accent:#d6a35c; --accent-soft:#2e261b; --plano:#a9b4bf;
+    --accent:#d6a35c; --accent-soft:#2e261b; --plano:#a9b4bf; --field:#25211c;
     --ok:#6cc08a; --warn:#e0a34e; --bad:#e07a70; --on-accent:#1a140c;
   }
 }
 :root[data-theme="dark"]{
   --bg:#151310; --card:#1e1b17; --ink:#f1ebe2; --muted:#a59b8e; --line:#332e27;
-  --accent:#d6a35c; --accent-soft:#2e261b; --plano:#a9b4bf;
+  --accent:#d6a35c; --accent-soft:#2e261b; --plano:#a9b4bf; --field:#25211c;
   --ok:#6cc08a; --warn:#e0a34e; --bad:#e07a70; --on-accent:#1a140c;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,sans-serif}
-.wrap{max-width:1040px;margin:0 auto;padding:28px 16px 64px}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 16px 110px}
+header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
 header h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5vw,40px);margin:0 0 4px;letter-spacing:-.01em}
 header p{margin:0;color:var(--muted)}
+.hbtns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:inherit;font-size:13.5px;font-weight:500;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:9px;padding:7px 13px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 nav.tabs{display:flex;gap:4px;margin:22px 0 18px;border-bottom:1px solid var(--line);overflow-x:auto}
 nav.tabs button{font:inherit;font-weight:500;background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:10px 12px;cursor:pointer;white-space:nowrap}
 nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
-.panel[hidden]{display:none}
+.panel[hidden],.hide{display:none!important}
 details.reglas{margin:0 0 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
 details.reglas summary{cursor:pointer;font-weight:600}
 details.reglas ul{margin:10px 0 2px;padding-left:20px}
@@ -42,19 +47,27 @@ details.reglas li{margin:4px 0}
 .fila-filtros .lbl{font-size:12px;color:var(--muted);width:70px}
 .chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 11px;font:inherit;font-size:13px;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.grid{display:grid;gap:16px;margin-top:10px}
+.chip small{color:inherit;opacity:.65}
+.grid{display:grid;gap:12px;margin-top:10px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 14px}
-.top{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
-.id{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.04em}
 .card h2{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:22px;margin:2px 0 6px}
+.id{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.04em}
 .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:12.5px;color:var(--muted)}
 .meta span{background:var(--accent-soft);border-radius:6px;padding:2px 8px}
 .meta .pri-Alta{background:var(--accent);color:var(--on-accent);font-weight:600}
 .meta .pri-Baja{background:transparent;border:1px solid var(--line)}
-.estado{font-size:12px;font-weight:600;border-radius:999px;padding:4px 10px;border:1px solid currentColor;white-space:nowrap;color:var(--muted)}
-.e-Ganador,.e-Montado{color:var(--ok)} .e-Descartado{color:var(--bad)} .e-En-test{color:var(--warn)}
-table{width:100%;border-collapse:collapse;margin:14px 0 6px}
-td{vertical-align:top;padding:9px 8px;border-top:1px solid var(--line)}
+.angulo-head{border-color:var(--accent)}
+.notas{margin-top:10px;font-size:13.5px;color:var(--muted);border-left:3px solid var(--accent);padding-left:10px}
+.var{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.var-top{display:flex;gap:10px;align-items:flex-start}
+.var-n{font-size:12px;font-weight:600;color:var(--accent);min-width:54px;padding-top:3px}
+.var-n small{display:block;color:var(--muted);font-weight:500}
+.var-hook{flex:1;font-family:Fraunces,Georgia,serif;font-size:17.5px;line-height:1.35}
+select.estado{font:inherit;font-size:12.5px;border:1px solid var(--line);background:var(--field);color:var(--ink);border-radius:8px;padding:4px 6px}
+.var details{margin-top:8px}
+.var summary{cursor:pointer;font-size:13px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:8px 0 6px}
+td{vertical-align:top;padding:8px;border-top:1px solid var(--line)}
 td.t{width:64px;color:var(--muted);font-size:12.5px;white-space:nowrap;padding-left:0}
 td.voz{font-weight:500}
 td.plano{color:var(--plano);font-size:13.5px;width:40%}
@@ -64,10 +77,12 @@ th:first-child{padding-left:0}
 .extra h3,.card h3{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 4px;font-weight:600}
 .extra ul,.extra ol{margin:0;padding-left:18px}
 .extra li{margin:3px 0}
-.notas{margin-top:10px;font-size:13.5px;color:var(--muted);border-left:3px solid var(--accent);padding-left:10px}
-.acciones{display:flex;gap:8px;margin-top:12px}
-button.copy{font:inherit;font-size:13px;font-weight:500;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;padding:6px 12px;cursor:pointer}
+.acciones{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+button.copy{font:inherit;font-size:12.5px;font-weight:500;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;padding:5px 10px;cursor:pointer}
 button.copy:hover{background:var(--accent-soft)}
+textarea.ed{width:100%;font:inherit;color:var(--ink);background:var(--field);border:1px solid var(--accent);border-radius:8px;padding:6px 8px;resize:vertical;min-height:38px;line-height:1.4}
+.var-hook textarea.ed{font-family:Fraunces,Georgia,serif;font-size:16.5px}
+.ed-hint{font-size:12px;color:var(--muted);margin:4px 0 0}
 .paso{display:grid;grid-template-columns:minmax(150px,250px) 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
 .paso b{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:17px}
 .vcard .vid{color:var(--accent);font-size:14px;font-family:Inter,sans-serif;font-weight:600;margin-right:8px}
@@ -79,6 +94,17 @@ button.copy:hover{background:var(--accent-soft)}
 .cols .card h2{font-size:19px}
 .cols ul{margin:6px 0 0;padding-left:20px} .cols li{margin:4px 0}
 .pie{margin-top:28px;font-size:12.5px;color:var(--muted)}
+.savebar{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:var(--bg);padding:12px 16px;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;z-index:10}
+.savebar .btn{border-color:transparent}
+.savebar .msg{font-size:14px}
+dialog{border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);max-width:520px;width:calc(100% - 32px);padding:20px}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+dialog h2{font-family:Fraunces,Georgia,serif;font-weight:500;margin:0 0 8px}
+dialog ol{padding-left:20px;font-size:14px} dialog li{margin:4px 0}
+dialog input{width:100%;font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--field);color:var(--ink)}
+dialog .row{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;flex-wrap:wrap}
+a{color:var(--accent)}
+.toast{position:fixed;top:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:10px;font-size:14px;z-index:20;max-width:calc(100% - 32px)}
 @media (max-width:680px){
   table,tbody,tr,td{display:block;width:auto!important}
   thead{display:none}
@@ -87,14 +113,22 @@ button.copy:hover{background:var(--accent-soft)}
   td.plano::before{content:"Plano: ";font-weight:600}
   .extra,.paso,.cols,.ia{grid-template-columns:1fr}
   .fila-filtros .lbl{width:100%}
+  .var-top{flex-wrap:wrap}
+  .var-hook{flex-basis:100%;order:3}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>Vídeos para anuncios · Momenturies</h1>
-    <p>Qué hacer, cómo y con qué herramienta. Guiones listos para HeyGen y planos para el día de rodaje.</p>
+    <div>
+      <h1>Vídeos para anuncios · Momenturies</h1>
+      <p>Qué hacer, cómo y con qué herramienta. 15 vídeos por ángulo, listos para HeyGen.</p>
+    </div>
+    <div class="hbtns">
+      <button class="btn" id="bEditar" aria-pressed="false">Editar textos</button>
+      <button class="btn" id="bConexion">Conexión GitHub</button>
+    </div>
   </header>
   <nav class="tabs" role="tablist">
     <button role="tab" data-tab="plan" aria-selected="true">Plan</button>
@@ -109,44 +143,112 @@ button.copy:hover{background:var(--accent-soft)}
       <summary>Reglas para todos los guiones</summary>
       <ul id="reglas"></ul>
     </details>
-    <div class="fila-filtros" id="f-video"></div>
-    <div class="fila-filtros" id="f-pri"></div>
+    <div class="fila-filtros" id="f-angulo"></div>
     <div class="fila-filtros" id="f-estado"></div>
-    <div class="grid" id="grid"></div>
+    <div id="angulo"></div>
   </section>
   <section class="panel" id="p-rodaje" hidden></section>
   <p class="pie" id="pie"></p>
 </div>
+
+<div class="savebar hide" id="savebar">
+  <span class="msg" id="saveMsg"></span>
+  <button class="btn primary" id="bGuardar">Guardar en GitHub</button>
+  <button class="btn" id="bDescartar">Descartar</button>
+</div>
+
+<dialog id="dlgCon">
+  <h2>Conexión con GitHub</h2>
+  <p style="margin:0 0 6px;font-size:14px">Para guardar los cambios hace falta un token de GitHub. Se crea una vez y se queda guardado en este navegador.</p>
+  <ol>
+    <li>Entra en <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a> con la cuenta <b>mestrestein</b>.</li>
+    <li>Nombre: «Panel guiones». Caducidad: la que quieras.</li>
+    <li>Repository access: <b>Only select repositories</b> → <b>momenturies-guiones</b>.</li>
+    <li>Permissions → Repository permissions → <b>Contents: Read and write</b>.</li>
+    <li>Generar y pegar aquí abajo.</li>
+  </ol>
+  <input type="password" id="inToken" placeholder="github_pat_..." autocomplete="off">
+  <div class="row">
+    <button class="btn" id="bBorrarToken">Quitar token</button>
+    <button class="btn" id="bCerrarCon">Cerrar</button>
+    <button class="btn primary" id="bGuardarToken">Guardar token</button>
+  </div>
+</dialog>
+
 <script>
+const REPO = 'mestrestein/momenturies-guiones', FILE = 'guiones.json';
+const API = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let data;
-const F = {video: 'Todos', pri: 'Todas', estado: 'Todos'};
+const store = {
+  get(k){ try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v){ try { localStorage.setItem(k, v); } catch (e) {} },
+  del(k){ try { localStorage.removeItem(k); } catch (e) {} }
+};
+const b64enc = s => { const b = new TextEncoder().encode(s); let bin = ''; for (let i = 0; i < b.length; i += 0x8000) bin += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(bin); };
+const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, '')), c => c.charCodeAt(0)));
+
+let data, sha = null, dirty = 0, editando = false;
+const F = {angulo: null, estado: 'Todos'};
 const PRIS = ['Alta', 'Media', 'Baja'];
 const vidName = id => (data.videos.find(v => v.id === id) || {}).nombre || id;
 const sinVoz = v => v.startsWith('(');
+const limpio = v => v.replace(/^\(sin voz\) Texto: «(.*)»$/, '$1');
 
+function toast(msg, ms = 2600){
+  const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
+  document.body.appendChild(t); setTimeout(() => t.remove(), ms);
+}
+
+/* ---------- campos editables ---------- */
+function getPath(path){ return path.split('.').reduce((o, k) => o[k], data); }
+function setPath(path, val){
+  const ks = path.split('.'), last = ks.pop();
+  ks.reduce((o, k) => o[k], data)[last] = val;
+}
+// Muestra texto o, en modo edición, un textarea ligado a la ruta dentro de data.
+function f(path, rows = 2){
+  const v = getPath(path);
+  return editando ? `<textarea class="ed" rows="${rows}" data-path="${esc(path)}">${esc(v)}</textarea>` : esc(v);
+}
+function fList(path){
+  const arr = getPath(path);
+  if (editando) return `<textarea class="ed" rows="${Math.max(3, arr.length)}" data-list="${esc(path)}">${esc(arr.join('\n'))}</textarea><p class="ed-hint">Una línea por elemento.</p>`;
+  return `<ul>${arr.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`;
+}
+function marcar(){
+  dirty++;
+  $('#savebar').classList.remove('hide');
+  $('#saveMsg').textContent = `Cambios sin guardar (${dirty})`;
+  store.set('mg-draft', JSON.stringify({sha, data}));
+}
+function limpiarDirty(){
+  dirty = 0; $('#savebar').classList.add('hide'); store.del('mg-draft');
+  const r = $('#bRecuperar'); if (r) r.remove();
+}
+
+/* ---------- pestañas ---------- */
 function tab(t){
   document.querySelectorAll('nav.tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === t));
   document.querySelectorAll('.panel').forEach(p => p.hidden = p.id !== 'p-' + t);
-  try { localStorage.setItem('mg-tab', t); } catch (e) {}
+  store.set('mg-tab', t);
 }
 
 function renderPlan(){
-  $('#p-plan').innerHTML = data.plan.map(p => `<div class="paso"><b>${esc(p.paso)}</b><div>${esc(p.que)}</div></div>`).join('');
+  $('#p-plan').innerHTML = data.plan.map((p, i) => `<div class="paso"><b>${f(`plan.${i}.paso`, 1)}</b><div>${f(`plan.${i}.que`, 3)}</div></div>`).join('');
 }
 
 function renderVideos(){
-  $('#p-videos').innerHTML = '<div class="grid">' + data.videos.map(v => `
+  $('#p-videos').innerHTML = '<div class="grid">' + data.videos.map((v, i) => `
     <article class="card vcard">
-      <h2><span class="vid">${esc(v.id)}</span>${esc(v.nombre)}</h2>
-      <p class="resumen">${esc(v.resumen)}</p>
+      <h2><span class="vid">${esc(v.id)}</span>${f(`videos.${i}.nombre`, 1)}</h2>
+      <p class="resumen">${f(`videos.${i}.resumen`, 3)}</p>
       <div class="extra">
-        <div><h3>Qué hacer</h3><ol>${v.pasos.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div>
+        <div><h3>Qué hacer</h3>${editando ? fList(`videos.${i}.pasos`) : `<ol>${v.pasos.map(x => `<li>${esc(x)}</li>`).join('')}</ol>`}</div>
         <div>
           <h3>Herramientas</h3>
-          ${v.ias.map(i => `<div class="ia"><b>${esc(i.h)}</b><span>${esc(i.para)}</span></div>`).join('')}
-          <h3 style="margin-top:14px">Guiones</h3>
+          ${v.ias.map((x, k) => `<div class="ia"><b>${f(`videos.${i}.ias.${k}.h`, 1)}</b><span>${f(`videos.${i}.ias.${k}.para`, 2)}</span></div>`).join('')}
+          <h3 style="margin-top:14px">Ángulos</h3>
           ${v.guiones.map(g => `<button class="linkg" data-goto="${esc(g)}">${esc(g)} · ${esc((data.guiones.find(x => x.id === g) || {}).titulo)}</button>`).join('')}
         </div>
       </div>
@@ -154,85 +256,171 @@ function renderVideos(){
 }
 
 function renderRodaje(){
-  const r = data.rodaje;
-  const box = (t, l) => `<article class="card"><h2>${t}</h2><ul>${l.map(x => `<li>${esc(x)}</li>`).join('')}</ul></article>`;
-  $('#p-rodaje').innerHTML = `<div class="cols">${box('Qué imprimir', r.imprimir)}${box('Equipo', r.equipo)}</div>
-    <div class="cols">${box('Planos a grabar', r.planos)}${box('Consejos', r.consejos)}</div>`;
-}
-
-function chips(el, label, key, opciones){
-  $(el).innerHTML = `<span class="lbl">${label}</span>` + opciones.map(([val, txt]) =>
-    `<button class="chip" aria-pressed="${F[key] === val}" data-k="${key}" data-v="${esc(val)}">${esc(txt)}</button>`).join('');
+  const box = (t, k) => `<article class="card"><h2>${t}</h2>${fList('rodaje.' + k)}</article>`;
+  $('#p-rodaje').innerHTML = `<div class="cols">${box('Qué imprimir', 'imprimir')}${box('Equipo', 'equipo')}</div>
+    <div class="cols">${box('Planos a grabar', 'planos')}${box('Consejos', 'consejos')}</div>`;
 }
 
 function renderFiltros(){
-  chips('#f-video', 'Vídeo', 'video', [['Todos', 'Todos'], ...data.videos.map(v => [v.id, v.id + ' · ' + v.nombre])]);
-  chips('#f-pri', 'Prioridad', 'pri', [['Todas', 'Todas'], ...PRIS.map(p => [p, p])]);
-  chips('#f-estado', 'Estado', 'estado', [['Todos', 'Todos'], ...data.estados.filter(e => data.guiones.some(g => g.estado === e)).map(e => [e, e])]);
+  const ord = [...data.guiones].sort((a, b) => PRIS.indexOf(a.prioridad) - PRIS.indexOf(b.prioridad));
+  $('#f-angulo').innerHTML = '<span class="lbl">Ángulo</span>' + ord.map(g =>
+    `<button class="chip" aria-pressed="${F.angulo === g.id}" data-ang="${esc(g.id)}">${esc(g.id)} · ${esc(g.titulo)} <small>${esc(g.prioridad)}</small></button>`).join('');
+  const g = data.guiones.find(x => x.id === F.angulo);
+  const usados = data.estados.filter(e => g.variantes.some(v => v.estado === e));
+  $('#f-estado').innerHTML = '<span class="lbl">Estado</span>' + ['Todos', ...usados].map(e => {
+    const n = e === 'Todos' ? g.variantes.length : g.variantes.filter(v => v.estado === e).length;
+    return `<button class="chip" aria-pressed="${F.estado === e}" data-est="${esc(e)}">${esc(e)} <small>${n}</small></button>`;
+  }).join('');
 }
 
-function renderGuiones(){
-  const lista = data.guiones
-    .filter(g => (F.video === 'Todos' || g.video === F.video) && (F.pri === 'Todas' || g.prioridad === F.pri) && (F.estado === 'Todos' || g.estado === F.estado))
-    .sort((a, b) => PRIS.indexOf(a.prioridad) - PRIS.indexOf(b.prioridad));
-  $('#grid').innerHTML = lista.map(g => {
-    const conVoz = g.bloques.some(b => !sinVoz(b.voz));
-    return `
-    <article class="card" id="g-${esc(g.id)}">
-      <div class="top">
-        <div>
-          <div class="id">${esc(g.id)} · ${esc(g.video)} ${esc(vidName(g.video))}</div>
-          <h2>${esc(g.titulo)}</h2>
-          <div class="meta"><span class="pri-${esc(g.prioridad)}">Prioridad ${esc(g.prioridad)}</span><span>${esc(g.angulo)}</span><span>${esc(g.publico)}</span><span>${esc(g.producto)}</span></div>
-        </div>
-        <span class="estado e-${esc(g.estado).replace(/ /g, '-')}">${esc(g.estado)}</span>
-      </div>
-      <table>
-        <thead><tr><th>Tiempo</th><th>${conVoz ? 'Voz del presentador' : 'Texto / sonido'}</th><th>Plano</th></tr></thead>
-        <tbody>${g.bloques.map(b => `<tr><td class="t">${esc(b.t)}</td><td class="voz">${esc(b.voz)}</td><td class="plano">${esc(b.plano)}</td></tr>`).join('')}</tbody>
-      </table>
-      <div class="extra">
-        <div><h3>Ganchos alternativos</h3><ul>${(g.gancho_alternativo || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
-        <div><h3>Texto en pantalla</h3><ul>${(g.texto_pantalla || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
-      </div>
-      ${g.notas ? `<div class="notas">${esc(g.notas)}</div>` : ''}
-      ${conVoz ? `<div class="acciones"><button class="copy" data-id="${esc(g.id)}">Copiar texto para HeyGen</button></div>` : ''}
+function renderAngulo(){
+  const gi = data.guiones.findIndex(x => x.id === F.angulo), g = data.guiones[gi], P = `guiones.${gi}`;
+  const head = `
+    <article class="card angulo-head">
+      <div class="id">${esc(g.id)} · ${esc(g.video)} ${esc(vidName(g.video))}</div>
+      <h2>${f(P + '.titulo', 1)}</h2>
+      <div class="meta"><span class="pri-${esc(g.prioridad)}">Prioridad ${esc(g.prioridad)}</span><span>${f(P + '.angulo', 1)}</span><span>${f(P + '.publico', 1)}</span><span>${f(P + '.producto', 1)}</span></div>
+      ${(g.notas || editando) ? `<div class="notas">${f(P + '.notas', 2)}</div>` : ''}
     </article>`;
-  }).join('') || '<p>No hay guiones con estos filtros.</p>';
+  const vars = g.variantes.map((v, vi) => ({v, vi})).filter(({v}) => F.estado === 'Todos' || v.estado === F.estado);
+  const conVoz = g.variantes[0].bloques.some(b => !sinVoz(b.voz));
+  const body = vars.map(({v, vi}) => {
+    const VP = `${P}.variantes.${vi}`;
+    return `
+    <div class="var">
+      <div class="var-top">
+        <div class="var-n">#${String(v.n).padStart(2, '0')}<small>Cuerpo ${esc(v.cuerpo)}</small></div>
+        <div class="var-hook">${editando ? f(VP + '.bloques.0.voz', 2) : esc(limpio(v.bloques[0].voz))}</div>
+        <select class="estado" data-path="${esc(VP)}.estado">${data.estados.map(e => `<option${e === v.estado ? ' selected' : ''}>${esc(e)}</option>`).join('')}</select>
+      </div>
+      <details${editando ? ' open' : ''}>
+        <summary>Ver guion completo</summary>
+        <table>
+          <thead><tr><th>Tiempo</th><th>${conVoz ? 'Voz del presentador' : 'Texto / sonido'}</th><th>Plano</th></tr></thead>
+          <tbody>${v.bloques.map((b, bi) => `<tr><td class="t">${esc(b.t)}</td><td class="voz">${f(`${VP}.bloques.${bi}.voz`, 2)}</td><td class="plano">${f(`${VP}.bloques.${bi}.plano`, 2)}</td></tr>`).join('')}</tbody>
+        </table>
+        <div class="extra">
+          <div><h3>Texto en pantalla</h3>${fList(VP + '.texto_pantalla')}</div>
+          <div><h3>Notas</h3>${editando ? f(VP + '.notas', 2) : (esc(v.notas) || '<span style="color:var(--muted)">Sin notas</span>')}</div>
+        </div>
+        ${conVoz ? `<div class="acciones">
+          <button class="copy" data-copy="gancho" data-v="${esc(VP)}">Copiar gancho</button>
+          <button class="copy" data-copy="cuerpo" data-v="${esc(VP)}">Copiar cuerpo + cierre</button>
+          <button class="copy" data-copy="todo" data-v="${esc(VP)}">Copiar todo</button>
+        </div>` : ''}
+      </details>
+    </div>`;
+  }).join('') || '<p>No hay variantes en este estado.</p>';
+  $('#angulo').innerHTML = head + `<div class="grid">${body}</div>`;
 }
 
+function renderTodo(){
+  $('#reglas').innerHTML = editando ? `<li style="list-style:none;margin-left:-20px">${fList('reglas')}</li>` : data.reglas.map(r => `<li>${esc(r)}</li>`).join('');
+  $('#pie').textContent = 'Última actualización: ' + data.actualizado;
+  renderPlan(); renderVideos(); renderRodaje(); renderFiltros(); renderAngulo();
+}
+
+/* ---------- eventos ---------- */
+document.addEventListener('input', ev => {
+  const el = ev.target;
+  if (el.dataset.path){ setPath(el.dataset.path, el.value); marcar(); }
+  else if (el.dataset.list){ setPath(el.dataset.list, el.value.split('\n').map(s => s.trim()).filter(Boolean)); marcar(); }
+});
+document.addEventListener('change', ev => {
+  const el = ev.target;
+  if (el.matches('select.estado')){ setPath(el.dataset.path, el.value); marcar(); renderFiltros(); }
+});
 document.addEventListener('click', async ev => {
   const t = ev.target.closest('nav.tabs button');
   if (t){ tab(t.dataset.tab); return; }
-  const chip = ev.target.closest('.chip[data-k]');
-  if (chip){ F[chip.dataset.k] = chip.dataset.v; renderFiltros(); renderGuiones(); return; }
+  const a = ev.target.closest('[data-ang]');
+  if (a){ F.angulo = a.dataset.ang; F.estado = 'Todos'; store.set('mg-ang', F.angulo); renderFiltros(); renderAngulo(); return; }
+  const e = ev.target.closest('[data-est]');
+  if (e){ F.estado = e.dataset.est; renderFiltros(); renderAngulo(); return; }
   const go = ev.target.closest('[data-goto]');
-  if (go){
-    F.video = 'Todos'; F.pri = 'Todas'; F.estado = 'Todos';
-    renderFiltros(); renderGuiones(); tab('guiones');
-    const el = document.getElementById('g-' + go.dataset.goto);
-    if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
-    return;
-  }
-  const btn = ev.target.closest('.copy');
-  if (btn){
-    const g = data.guiones.find(x => x.id === btn.dataset.id);
-    const texto = g.bloques.map(b => b.voz).filter(v => !sinVoz(v)).join(' ');
-    try { await navigator.clipboard.writeText(texto); btn.textContent = 'Copiado'; }
-    catch (e) { btn.textContent = 'No se pudo copiar'; }
-    setTimeout(() => { btn.textContent = 'Copiar texto para HeyGen'; }, 1500);
+  if (go){ F.angulo = go.dataset.goto; F.estado = 'Todos'; renderFiltros(); renderAngulo(); tab('guiones'); window.scrollTo({top: 0}); return; }
+  const c = ev.target.closest('[data-copy]');
+  if (c){
+    const v = getPath(c.dataset.v), voces = v.bloques.map(b => b.voz).filter(x => !sinVoz(x));
+    const texto = c.dataset.copy === 'gancho' ? voces[0] : c.dataset.copy === 'cuerpo' ? voces.slice(1).join(' ') : voces.join(' ');
+    const orig = c.textContent;
+    try { await navigator.clipboard.writeText(texto); c.textContent = 'Copiado'; } catch (err) { c.textContent = 'No se pudo copiar'; }
+    setTimeout(() => { c.textContent = orig; }, 1400);
   }
 });
 
-fetch('guiones.json?v=' + Date.now()).then(r => r.json()).then(d => {
-  data = d;
-  $('#reglas').innerHTML = d.reglas.map(r => `<li>${esc(r)}</li>`).join('');
-  $('#pie').textContent = 'Última actualización: ' + d.actualizado;
-  renderPlan(); renderVideos(); renderRodaje(); renderFiltros(); renderGuiones();
-  let t = 'plan';
-  try { t = localStorage.getItem('mg-tab') || 'plan'; } catch (e) {}
-  tab(t);
-}).catch(() => { $('#p-plan').innerHTML = '<p>No se pudo cargar guiones.json.</p>'; });
+$('#bEditar').onclick = () => {
+  editando = !editando;
+  $('#bEditar').setAttribute('aria-pressed', editando);
+  $('#bEditar').textContent = editando ? 'Terminar de editar' : 'Editar textos';
+  if (editando && !store.get('mg-token')) toast('Puedes editar ya. Para guardar en GitHub, configura antes la conexión.', 4000);
+  renderTodo();
+};
+
+/* ---------- GitHub ---------- */
+const dlg = $('#dlgCon');
+$('#bConexion').onclick = () => { $('#inToken').value = store.get('mg-token') || ''; dlg.showModal(); };
+$('#bCerrarCon').onclick = () => dlg.close();
+$('#bGuardarToken').onclick = () => { const v = $('#inToken').value.trim(); if (v){ store.set('mg-token', v); toast('Token guardado en este navegador.'); } dlg.close(); };
+$('#bBorrarToken').onclick = () => { store.del('mg-token'); $('#inToken').value = ''; toast('Token quitado.'); };
+
+function headers(){
+  const h = {'Accept': 'application/vnd.github+json'};
+  const tk = store.get('mg-token'); if (tk) h.Authorization = 'Bearer ' + tk;
+  return h;
+}
+
+$('#bGuardar').onclick = async () => {
+  if (!store.get('mg-token')){ dlg.showModal(); return; }
+  const b = $('#bGuardar'); b.disabled = true; b.textContent = 'Guardando...';
+  try {
+    const cur = await fetch(API + '?ref=main&t=' + Date.now(), {headers: headers(), cache: 'no-store'});
+    if (!cur.ok) throw new Error(cur.status === 401 ? 'El token no vale o ha caducado.' : 'No se pudo leer el archivo (' + cur.status + ').');
+    const remoto = (await cur.json()).sha;
+    if (sha && remoto !== sha){
+      throw new Error('Alguien ha guardado cambios desde que abriste el panel. Tus cambios siguen en borrador: recarga la página y pulsa «Recuperar».');
+    }
+    data.actualizado = new Date().toISOString().slice(0, 10);
+    const r = await fetch(API, {method: 'PUT', headers: {...headers(), 'Content-Type': 'application/json'},
+      body: JSON.stringify({message: 'Edición de guiones desde el panel', content: b64enc(JSON.stringify(data, null, 2) + '\n'), sha: remoto, branch: 'main'})});
+    if (!r.ok) throw new Error(r.status === 403 || r.status === 404 ? 'El token no tiene permiso de escritura en este repositorio.' : 'Error al guardar (' + r.status + ').');
+    sha = (await r.json()).content.sha;
+    limpiarDirty(); $('#pie').textContent = 'Última actualización: ' + data.actualizado;
+    toast('Guardado. Los demás lo verán en cuanto recarguen.');
+  } catch (err) { toast(err.message, 6000); }
+  b.disabled = false; b.textContent = 'Guardar en GitHub';
+};
+$('#bDescartar').onclick = () => { limpiarDirty(); cargar(); };
+
+/* ---------- carga ---------- */
+async function cargar(){
+  try {
+    const r = await fetch(API + '?ref=main&t=' + Date.now(), {headers: headers(), cache: 'no-store'});
+    if (!r.ok) throw new Error('api');
+    const j = await r.json(); sha = j.sha; data = JSON.parse(b64dec(j.content));
+  } catch (e) {
+    const r = await fetch(FILE + '?v=' + Date.now()); data = await r.json(); sha = null;
+  }
+  const ang = store.get('mg-ang');
+  F.angulo = data.guiones.some(g => g.id === ang) ? ang : [...data.guiones].sort((a, b) => PRIS.indexOf(a.prioridad) - PRIS.indexOf(b.prioridad))[0].id;
+  renderTodo();
+  tab(store.get('mg-tab') || 'plan');
+}
+
+// Si quedó un borrador de otra sesión, se carga lo publicado y se ofrece recuperarlo.
+function ofrecerBorrador(){
+  $('#savebar').classList.remove('hide');
+  $('#saveMsg').textContent = 'Tienes cambios de otra sesión sin guardar';
+  const b = document.createElement('button'); b.className = 'btn primary'; b.id = 'bRecuperar'; b.textContent = 'Recuperar';
+  b.onclick = () => {
+    try { data = JSON.parse(store.get('mg-draft')).data; } catch (e) {}
+    b.remove(); dirty = 1; $('#saveMsg').textContent = 'Borrador recuperado sin guardar';
+    renderTodo();
+  };
+  $('#savebar').insertBefore(b, $('#bGuardar'));
+}
+
+cargar().then(() => { if (store.get('mg-draft')) ofrecerBorrador(); });
 </script>
 </body>
 </html>
